@@ -1,0 +1,196 @@
+:root {
+  --color-bg: #ffe4e6;
+  /* Rose 100 */
+  --color-primary: #ec4899;
+  /* Pink 500 */
+  --color-secondary: #be185d;
+  /* Pink 700 */
+  --color-text: #881337;
+  /* Rose 900 */
+  --color-white: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --font-main: 'Segoe UI', SYSTEM-UI, sans-serif;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  overflow: hidden;
+  /* For floating hearts background */
+}
+
+/* Floating Hearts Background */
+.bg-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.heart-particle {
+  position: absolute;
+  color: #fb7185;
+  /* Rose 400 */
+  opacity: 0.3;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(110vh) scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.8;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(-10vh) scale(1) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.floating-memory {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  z-index: 10;
+}
+
+/* Typography */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+  animation: bounceIn 1s ease;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  /* Ensure buttons wrap if they get too big */
+}
+
+.btn {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  /* Base size */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 6px var(--color-shadow);
+  transition: var(--transition);
+  position: relative;
+  /* For dynamic positioning if needed */
+}
+
+.btn-yes {
+  background-color: #22c55e;
+  /* Green 500 */
+  color: var(--color-white);
+}
+
+.btn-yes:hover {
+  background-color: #16a34a;
+  /* Green 600 */
+  transform: scale(1.05);
+}
+
+.btn-no {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-no:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Images/Gifs */
+.gif-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  transition: transform 0.5s ease;
+}
+
+.gif-container img:hover {
+  transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
